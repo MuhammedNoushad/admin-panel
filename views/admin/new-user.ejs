@@ -1,0 +1,71 @@
+<%- include('../layouts/header.ejs') -%>
+
+<div class="text-center center-div" id="login">
+  <div class="container w-25 border py-5">
+    <div class="title pb-5">
+      <h2 class="font-weight-bold">Add User</h2>
+    </div>
+    <form action="/admin/new-user" method="post" class="pt-3">
+      <p class="text-success">
+        <% if(typeof message !== 'undefined'){ %> <%= message %>
+      </p>
+
+      <% } %>
+      <div class="form-group">
+        <input
+          type="name"
+          class="form-control"
+          placeholder="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="number"
+          class="form-control"
+          name="age"
+          placeholder="age"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="mobile"
+          placeholder="mobile number"
+          required
+        />
+      </div>
+
+      <input type="submit" class="btn btn-outline-success" value="Create User" />
+      <br /><br />
+      <a href="/admin/dashboard" class="text-primary">
+        <i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a
+      >
+    </form>
+  </div>
+</div>
+
+<% if (typeof message !== 'undefined') { %>
+<p style="color: green"><%= message %></p>
+<% } %> <%- include('../layouts/footer.ejs') -%>

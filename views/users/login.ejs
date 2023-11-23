@@ -1,0 +1,44 @@
+<%-include('../layouts/header') -%>
+<div class="text-center center-div" id="login">
+  <div class="container w-25 border py-5">
+    <div class="title pb-5">
+      <h2 class="font-weight-bold">Login System</h2>
+      <span>Log in for the existing user</span>
+    </div>
+    <form action="/login" method="post" class="pt-3">
+      <p style="display: block" id="check" class="text-danger">
+        <% if(typeof message !== 'undefined'){ %> <%= message %>
+      </p>
+
+      <% } %>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="password"
+        />
+      </div>
+      <input
+        type="submit"
+        id="login"
+        class="btn btn-outline-success"
+        value="login"
+      />
+      <br /><br /><span>don't have an account?</span>
+      <a href="/register" class="text-primary">Signup</a>
+      <br /><br /><span>admin?</span>
+      <a href="/admin" class="text-primary">Login</a>
+    </form>
+  </div>
+</div>
+
+<%- include('../layouts/footer') -%>
